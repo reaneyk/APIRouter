@@ -1,18 +1,26 @@
 <?php
-
 class APIFactory
 {
-  function init($className) {
-    try {
-      if(@include_once './classes/' . $className . '.php') {
-        return new $className;
-      } else {
-        return False;
-      }
-    } catch(Exception $e) {
-      return False;
+    function init($className) {
+
+        $className = ucfirst($className);
+        $classPath = './classes/' . $className . '.php';
+
+        try {
+
+            if (!file_exists($classPath)) {
+                throw new Exception("Not Found");
+            }
+
+            include_once $classPath;
+            return new $className;
+
+        } catch(Exception $e) {
+
+            echo $e->getMessage();
+            return False;
+
     }
   }
 }
-
 ?>

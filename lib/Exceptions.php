@@ -1,15 +1,4 @@
 <?php
 
-class UndefinedActionException extends Exception 
-{
-  public function __construct($message, $code = 0) {
-    parent::__construct($message, $code);
-  }
-
-  public function errorMessage() {
-    return 'Action is undefined';
-  }
-}
-
-
-?>
+require_once './lib/exceptions/undefined_action.php';
+require_once './lib/exceptions/undefined_route.php';
