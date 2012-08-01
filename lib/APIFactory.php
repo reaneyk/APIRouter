@@ -1,10 +1,11 @@
 <?php
 class APIFactory
 {
-    function init($className) {
+    function init($classPathName) {
 
-        $className = ucfirst($className);
-        $classPath = './classes/' . $className . '.php';
+        //$className =  $name = strtolower(preg_replace('/([a-z])([A-Z])/', '$1_$2', $className));
+        $className = implode('', array_map("ucfirst", explode('_', $classPathName)));
+        $classPath = './classes/' . $className . '/init.php';
 
         try {
 
