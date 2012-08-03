@@ -1,8 +1,9 @@
 <?php
 
-class Test {
+class Test 
+{
 
-  function __construct(){
+  function __construct() {
   
   }
 
@@ -11,5 +12,4 @@ class Test {
   }
 
 }
-
 ?>
